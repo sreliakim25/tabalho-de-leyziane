@@ -105,7 +105,32 @@ export default function Footer({ setCurrentPage }) {
             Criado com carinho para alunos e futuros navegadores da internet.
           </p>
         </div>
+
+        {/* Créditos Acadêmicos — Código sem Fronteiras */}
+        <div style={{
+          marginTop: '24px',
+          paddingTop: '20px',
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+          textAlign: 'center'
+        }}>
+          <p style={{
+            margin: 0,
+            fontSize: '0.9rem',
+            color: 'rgba(255,255,255,0.45)',
+            fontStyle: 'italic',
+            lineHeight: 1.7
+          }}>
+            📚 Material desenvolvido no <strong style={{ color: 'rgba(255,255,255,0.65)', fontStyle: 'normal' }}>Código sem Fronteiras: Desenvolvimento Web com IA</strong>
+            <br />
+            <span style={{ fontSize: '0.85rem' }}>
+              Instrutor: <strong style={{ color: 'rgba(255,255,255,0.6)', fontStyle: 'normal' }}>Eliakim Rocha</strong>
+              &nbsp;·&nbsp;
+              Data: <strong style={{ color: 'rgba(255,255,255,0.6)', fontStyle: 'normal' }}>15/08/2026</strong>
+            </span>
+          </p>
+        </div>
       </div>
     </footer>
   );
+
 }
