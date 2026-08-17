@@ -203,7 +203,8 @@ function App() {
         fontSize={fontSize} 
         setFontSize={setFontSize} 
         altoContraste={altoContraste} 
-        setAltoContraste={setAltoContraste} 
+        setAltoContraste={setAltoContraste}
+        currentPage={currentPage}
       />
 
       {/* 2. Cabeçalho de Navegação Principal */}
