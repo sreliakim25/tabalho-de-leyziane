@@ -1,0 +1,244 @@
+/* 
+  =========================================
+  DESIGN SYSTEM - PRIMEIROS PASSOS TECH
+  =========================================
+  Este arquivo centraliza o estilo visual da plataforma.
+  Ele foi planejado com foco em inclusão digital, legibilidade e acessibilidade.
+  Os alunos podem ler este código para entender a estruturação de variáveis CSS
+  e técnicas modernas de design responsivo e acessível.
+*/
+
+:root {
+  /* Cores Principais (Identidade Visual Solicitada) */
+  --bg-color: #F0EAD8;       /* Creme: Fundo acolhedor com baixo brilho, reduz fadiga visual */
+  --primary: #8B1A1A;        /* Vermelho Escuro: Destaque principal, títulos e botões importantes */
+  --secondary: #E8A020;      /* Dourado: Elementos ativos, bordas, conquistas e realces */
+  
+  /* Cores de Apoio */
+  --text-color: #2F2625;     /* Marrom Escuro: Para alto contraste de leitura no fundo creme */
+  --text-muted: #6B5B59;     /* Marrom Suave: Para textos secundários e descrições */
+  --card-bg: #FFFFFF;        /* Branco puro: Contraste perfeito para as caixas de conteúdo */
+  --border-color: #D7CDAE;   /* Creme Escuro: Linhas divisórias suaves */
+  
+  /* Cores de Alerta (Segurança Digital) */
+  --color-success: #2E7D32;  /* Verde: "Pode confiar" */
+  --color-warning: #EF6C00;  /* Laranja: "Cuidado" */
+  --color-danger: #C62828;   /* Vermelho: "Provavelmente é golpe" */
+
+  /* Tipografia */
+  --font-title: 'Playfair Display', Georgia, serif;
+  --font-body: 'Crimson Pro', Cambria, serif;
+
+  /* Espaçamentos e Bordas */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 4px 12px rgba(47, 38, 37, 0.08);
+  --shadow-hover: 0 8px 24px rgba(47, 38, 37, 0.15);
+  
+  /* Transições suaves para micro-animações */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 
+  Tema de Alto Contraste (.high-contrast)
+  Redefinimos as variáveis CSS principais para preto e branco / cores de alta visibilidade.
+  Isso é ativado via JavaScript na tag <html> ou <body>.
+*/
+.high-contrast {
+  --bg-color: #000000;
+  --primary: #FFFF00;        /* Amarelo de alto contraste */
+  --secondary: #00FFFF;      /* Ciano de alto contraste */
+  --text-color: #FFFFFF;
+  --text-muted: #E0E0E0;
+  --card-bg: #121212;
+  --border-color: #FFFFFF;
+  
+  --color-success: #00FF00;
+  --color-warning: #FFFF00;
+  --color-danger: #FF00FF;
+  
+  --shadow: none;
+  --shadow-hover: none;
+}
+
+/* 
+  Reset e Configurações de Base
+  Usamos box-sizing border-box para facilitar cálculos de largura e altura.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+  Configuração do HTML
+  A propriedade font-size padrão é 100% (16px).
+  Ao ajustar essa porcentagem dinamicamente via JS (ex: 120%),
+  todos os elementos que usam a unidade 'rem' escalarão proporcionalmente.
+*/
+html {
+  font-size: 100%; /* Base para acessibilidade */
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos serifados elegantes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.3rem; }
+
+p {
+  font-size: 1.2rem; /* Fonte base ligeiramente maior para facilitar a leitura */
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+a:hover, a:focus {
+  color: var(--secondary);
+}
+
+/* 
+  Foco de Acessibilidade 
+  Garante que usuários navegando com a tecla Tab saibam exatamente onde estão.
+*/
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 4px;
+}
+
+/* 
+  Componentes Comuns e Classes Utilitárias
+*/
+
+/* Container Principal */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Botões Grandes e Acessíveis */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Botão Primário (Vermelho Escuro) */
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botão Secundário (Dourado/Borda) */
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Cards de Conteúdo */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+/* Grid System Responsivo */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Elementos Invisíveis para Leitores de Tela (Acessibilidade) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Ajustes Finais de Layout */
+main {
+  padding: 40px 0;
+  min-height: calc(100vh - 200px);
+}
