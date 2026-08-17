@@ -2,30 +2,31 @@
   =========================================
   DESIGN SYSTEM - PRIMEIROS PASSOS TECH
   =========================================
-  Este arquivo centraliza o estilo visual da plataforma.
-  Ele foi planejado com foco em inclusão digital, legibilidade e acessibilidade.
-  Os alunos podem ler este código para entender a estruturação de variáveis CSS
-  e técnicas modernas de design responsivo e acessível.
+  Paleta atualizada: Azul Petróleo + Verde Esmeralda + Âmbar
+  Tema moderno, limpo e de alta legibilidade para inclusão digital.
 */
 
 :root {
-  /* Cores Principais (Identidade Visual Solicitada) */
-  --bg-color: #F0EAD8;       /* Creme: Fundo acolhedor com baixo brilho, reduz fadiga visual */
-  --primary: #8B1A1A;        /* Vermelho Escuro: Destaque principal, títulos e botões importantes */
-  --secondary: #E8A020;      /* Dourado: Elementos ativos, bordas, conquistas e realces */
+  /* === NOVA PALETA DE CORES === */
+  --bg-color: #F0F4F8;       /* Branco-gelo: Fundo limpo e moderno com levíssimo tom azulado */
+  --primary: #1B4F72;        /* Azul Petróleo: Cor principal, transmite confiança e seriedade */
+  --secondary: #F0A500;      /* Âmbar: Destaque energético para conquistas, bordas e ações */
   
   /* Cores de Apoio */
-  --text-color: #2F2625;     /* Marrom Escuro: Para alto contraste de leitura no fundo creme */
-  --text-muted: #6B5B59;     /* Marrom Suave: Para textos secundários e descrições */
-  --card-bg: #FFFFFF;        /* Branco puro: Contraste perfeito para as caixas de conteúdo */
-  --border-color: #D7CDAE;   /* Creme Escuro: Linhas divisórias suaves */
+  --text-color: #12263A;     /* Azul Muito Escuro: Para máximo contraste de leitura */
+  --text-muted: #4A6785;     /* Azul Aço Médio: Para textos secundários e descrições */
+  --card-bg: #FFFFFF;        /* Branco puro: Contraste perfeito para os cards de conteúdo */
+  --border-color: #C8D8E8;   /* Azul Claro: Linhas divisórias suaves e elegantes */
   
-  /* Cores de Alerta (Segurança Digital) */
-  --color-success: #2E7D32;  /* Verde: "Pode confiar" */
-  --color-warning: #EF6C00;  /* Laranja: "Cuidado" */
-  --color-danger: #C62828;   /* Vermelho: "Provavelmente é golpe" */
+  /* Cor de Destaque Verde (Esmeralda) usada em botões e sucessos */
+  --accent: #0E7C60;         /* Verde Esmeralda: Para elementos interativos e destaques */
 
-  /* Tipografia */
+  /* Cores de Alerta (Segurança Digital — mantidas para clareza semântica) */
+  --color-success: #0E7C60;  /* Verde Esmeralda: "Pode confiar" */
+  --color-warning: #D4860A;  /* Âmbar Escuro: "Cuidado" */
+  --color-danger: #B91C1C;   /* Vermelho: "Provavelmente é golpe" */
+
+  /* Tipografia — mantida para legibilidade */
   --font-title: 'Playfair Display', Georgia, serif;
   --font-body: 'Crimson Pro', Cambria, serif;
 
@@ -33,8 +34,8 @@
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  --shadow: 0 4px 12px rgba(47, 38, 37, 0.08);
-  --shadow-hover: 0 8px 24px rgba(47, 38, 37, 0.15);
+  --shadow: 0 4px 12px rgba(27, 79, 114, 0.10);
+  --shadow-hover: 0 10px 30px rgba(27, 79, 114, 0.18);
   
   /* Transições suaves para micro-animações */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -42,8 +43,7 @@
 
 /* 
   Tema de Alto Contraste (.high-contrast)
-  Redefinimos as variáveis CSS principais para preto e branco / cores de alta visibilidade.
-  Isso é ativado via JavaScript na tag <html> ou <body>.
+  Ativado via JavaScript na tag <html>.
 */
 .high-contrast {
   --bg-color: #000000;
@@ -51,12 +51,12 @@
   --secondary: #00FFFF;      /* Ciano de alto contraste */
   --text-color: #FFFFFF;
   --text-muted: #E0E0E0;
-  --card-bg: #121212;
+  --card-bg: #0A0A0A;
   --border-color: #FFFFFF;
   
-  --color-success: #00FF00;
-  --color-warning: #FFFF00;
-  --color-danger: #FF00FF;
+  --color-success: #00FF7F;
+  --color-warning: #FFD700;
+  --color-danger: #FF6B6B;
   
   --shadow: none;
   --shadow-hover: none;
